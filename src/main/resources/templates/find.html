@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+<!--
+	.a{
+		background-color:#36AFFB;
+		text-emphasis-color: #FFFFFF;
+		width: 1000px;
+		height: 60px;
+		color: #FFFFFF;
+		text-align: center;
+		padding-top: 15px;
+		
+	}
+	.b{
+	background-color:#36AFFB;
+	height: 10px;
+	}	
+	.c{
+		width: 600px;
+		height: 400px;
+	}
+-->
+</style>
+</head>
+<body>
+<center>
+<table  width="1000" height="50" border="1">
+ <h2 class="a">欢迎使用查询功能</h2>
+  <tbody>
+    <tr>
+      <td width="951">contents:</td>
+  
+      </tr>
+      <div th:each=content:${content}>
+     <tr>
+
+      <td><div th:text=${content.contents}></div></td>
+      <td width="33"><a href= "#" th:href="@{/up(id=${content.id})}">修改</a></td>
+    <td width="33"><a href= "#" th:href="@{/deletes(id=${content.id})}">删除</a></td>
+       
+      
+    </tr>
+  </tbody>
+</table>
+</br>
+
+</center>
+</body>
+</html>
