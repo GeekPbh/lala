@@ -33,14 +33,14 @@
   <tbody>
     <tr>
       <td width="951">contents:</td>
-  
-      </tr>
+  	  <td colspan="2"><a href="content"><center>返回页面</center></a> </td>
+  	  </tr>
       <div th:each=content:${content}>
      <tr>
 
       <td><div th:text=${content.contents}></div></td>
-      <td width="33"><a href= "#" th:href="@{/up(id=${content.id})}">修改</a></td>
-    <td width="33"><a href= "#" th:href="@{/deletes(id=${content.id})}">删除</a></td>
+      <td width="66"><a href= "#" th:href="@{/up(id=${content.id})}"><center>修改</center></a></td>
+    <td width="66"><a href= "#" th:href="@{/deletes(id=${content.id})}"><center>删除</center></a></td>
        
       
     </tr>
