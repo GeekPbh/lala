@@ -10,16 +10,14 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class User {
+	
 	  @Id
-	  private int id;
+	  	private int id;
 	    private String name;
 	    private String password;
 	    private String password1;
 	    private String password2;
 	    private String phone;
-	    private String salt;
-	    private String headUrl;
-	    private String role;
 	    @OneToMany(mappedBy="user") ///一对多
 	    private Set<Content> content;
 
@@ -72,29 +70,6 @@ public class User {
 	    	this.phone = phone;
 	    }
 
-	    public String getSalt() {
-	        return salt;
-	    }
-
-	    public void setSalt(String salt) {
-	        this.salt = salt;
-	    }
-
-	    public String getHeadUrl() {
-	        return headUrl;
-	    }
-
-	    public void setHeadUrl(String headUrl) {
-	        this.headUrl = headUrl;
-	    }
-
-	    public String getRole() {
-	        return role;
-	    }
-
-	    public void setRole(String role) {
-	        this.role = role;
-	    }
 
 		public Set<Content> getContent() {
 			return content;

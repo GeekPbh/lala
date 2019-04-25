@@ -81,7 +81,11 @@ public class IndexController {
 		return "registered";
 	} 
 	@PostMapping("/save") ///////前台传后台数据
-	public String Registered(@Valid Logining l,String name) {
+	public String Registered(@Valid Logining l,String name,String email,String code) {
+		if(!email.equals(code)){
+			return "error";
+		}
+
 		User user = new User();
 	    user.setName(name);
 	    if(daola.findByUsename(user.getName())!=null) {
@@ -93,12 +97,11 @@ public class IndexController {
 		if(l.getPassword().equals(l.getPassword1())) {
 			daola.save(user);
 			return "redirect:/";
-			
 		}else {
 			return "incorrect";
 		}
 		
-			}
+	}
 	
 	
 //注销账户
@@ -169,7 +172,7 @@ public class IndexController {
 	
 //写入内容
 @GetMapping("/content")
-	public String content(HttpSession session,Model m ) {
+	public String content(HttpSession session,Model m ) {		//session刷新页面不会丢失页面
 		if(session.getAttribute("sessuser")==null){
 			return "redirect:/login";
 		}else {
